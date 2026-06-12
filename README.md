@@ -56,7 +56,7 @@ graph TD;
 - REST API (JSON-based)
 
 ### Hosting
-- Render/Railway
+- Vercel
 
 
 ## Setup Instructions
