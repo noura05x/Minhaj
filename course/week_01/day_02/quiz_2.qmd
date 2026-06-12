@@ -1,0 +1,75 @@
+# Quiz 2: Day 2
+
+## Instructions
+- 5 questions total
+- Select best answer (A, B, C, D)
+- Answers at end of quiz
+
+---
+
+### Question 1
+What is the primary purpose of image transformations in computer vision?
+
+A) To enhance image features
+B) To restore distorted images
+C) To extract information from images
+D) All of the above
+
+---
+
+### Question 2
+Which of the following OpenCV functions can be used to resize an image?
+
+A) `cv2.flip()`
+B) `cv2.rotate()`
+C) `cv2.resize()`
+D) `cv2.filter2D()`
+
+---
+
+### Question 3
+What is the process of applying a kernel to an image to produce a feature map called?
+
+A) Convolution
+B) Transformation
+C) Filtering
+D) Edge detection
+
+---
+
+### Question 4
+Which type of kernel is used to detect edges and extract features from an image?
+
+A) Averaging kernel
+B) Gaussian kernel
+C) Sobel kernel
+D) Laplacian kernel
+
+---
+
+### Question 5
+What is the purpose of feature extraction in computer vision?
+
+A) To remove noise from an image
+B) To enhance image features
+C) To extract relevant information from an image
+D) To apply image transformations
+
+---
+
+## Answer Key
+
+**Question 1:** D
+*Why: Image transformations can be used to enhance, restore, or extract information from images.*
+
+**Question 2:** C
+*Why: The `cv2.resize()` function is used to resize an image to a specified size.*
+
+**Question 3:** A
+*Why: Convolution is the process of applying a kernel to an image to produce a feature map.*
+
+**Question 4:** C
+*Why: The Sobel kernel is used to detect edges and extract features from an image.*
+
+**Question 5:** C
+*Why: Feature extraction is the process of extracting relevant information from an image, allowing us to analyze and understand the image content.*

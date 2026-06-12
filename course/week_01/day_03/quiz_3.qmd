@@ -1,0 +1,75 @@
+# Quiz 3: Day 3
+
+## Instructions
+- 5 questions total
+- Select best answer (A, B, C, D)
+- Answers at end of quiz
+
+---
+
+### Question 1
+What is the primary purpose of applying image transformations in computer vision?
+
+A) To enhance image quality
+B) To correct for camera distortions or normalize images
+C) To detect edges or lines in an image
+D) To recognize shapes or patterns in an image
+
+---
+
+### Question 2
+Which OpenCV function can be used to resize an image to a specific size or scale?
+
+A) `cv2.rotate()`
+B) `cv2.flip()`
+C) `cv2.resize()`
+D) `cv2.getStructuringElement()`
+
+---
+
+### Question 3
+What is the process of applying a kernel to an image to extract features called?
+
+A) Image transformation
+B) Feature extraction
+C) Convolution
+D) Object detection
+
+---
+
+### Question 4
+Which of the following techniques can be used to detect edges in an image?
+
+A) Template matching
+B) Hough transform
+C) Canny edge detector
+D) Gaussian blur
+
+---
+
+### Question 5
+What is the name of the OpenCV function that can be used to detect lines in an image?
+
+A) `cv2.Canny()`
+B) `cv2.HoughLinesP()`
+C) `cv2.matchTemplate()`
+D) `cv2.convolve2D()`
+
+---
+
+## Answer Key
+
+**Question 1:** B
+*Why: Image transformations are used to correct for camera distortions or normalize images, which is essential for many computer vision applications.*
+
+**Question 2:** C
+*Why: The `cv2.resize()` function is used to resize an image to a specific size or scale, which is a common operation in computer vision.*
+
+**Question 3:** C
+*Why: Convolution is the process of applying a kernel to an image to extract features, which is a fundamental concept in computer vision.*
+
+**Question 4:** C
+*Why: The Canny edge detector is a technique used to detect edges in an image, which is a crucial step in many computer vision applications.*
+
+**Question 5:** B
+*Why: The `cv2.HoughLinesP()` function is used to detect lines in an image, which is a common operation in computer vision.*

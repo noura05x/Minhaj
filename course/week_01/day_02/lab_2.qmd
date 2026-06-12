@@ -1,0 +1,169 @@
+# Lab 2: Image Transformations and Feature Extraction
+
+## Applying Image Transformations and Feature Extraction Techniques
+
+### Objective
+In this lab, you will learn how to apply image transformations and feature extraction techniques using OpenCV. You will understand how to resize, rotate, and flip images, as well as extract features such as edges, lines, and shapes.
+
+### Prerequisites
+- Basic understanding of Python programming
+- Familiarity with OpenCV library
+- Understanding of image transformations and feature extraction concepts
+
+---
+
+### Step 1: Resizing an Image
+
+Resize an image to a specified size using the `cv2.resize()` function.
+```python
+import cv2
+
+# Load the image
+image = cv2.imread('image.jpg')
+
+# Resize the image to a specified size
+resized_image = cv2.resize(image, (256, 256))
+
+# Display the resized image
+cv2.imshow('Resized Image', resized_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+**Expected Result:**
+The image should be resized to the specified size (256x256 pixels).
+
+---
+
+### Step 2: Rotating an Image
+
+Rotate an image by a specified angle using the `cv2.getRotationMatrix2D()` and `cv2.warpAffine()` functions.
+```python
+import cv2
+import numpy as np
+
+# Load the image
+image = cv2.imread('image.jpg')
+
+# Define the rotation angle and center
+angle = 45
+center = (image.shape[1] // 2, image.shape[0] // 2)
+
+# Create a rotation matrix
+rotation_matrix = cv2.getRotationMatrix2D(center, angle, 1.0)
+
+# Rotate the image
+rotated_image = cv2.warpAffine(image, rotation_matrix, (image.shape[1], image.shape[0]))
+
+# Display the rotated image
+cv2.imshow('Rotated Image', rotated_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+**Expected Result:**
+The image should be rotated by the specified angle (45 degrees).
+
+---
+
+### Step 3: Flipping an Image
+
+Flip an image horizontally or vertically using the `cv2.flip()` function.
+```python
+import cv2
+
+# Load the image
+image = cv2.imread('image.jpg')
+
+# Flip the image horizontally
+flipped_image_horizontal = cv2.flip(image, 1)
+
+# Flip the image vertically
+flipped_image_vertical = cv2.flip(image, 0)
+
+# Display the flipped images
+cv2.imshow('Flipped Image (Horizontal)', flipped_image_horizontal)
+cv2.imshow('Flipped Image (Vertical)', flipped_image_vertical)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+**Expected Result:**
+The image should be flipped horizontally and vertically.
+
+---
+
+### Step 4: Extracting Edges
+
+Extract edges from an image using the `cv2.Canny()` function.
+```python
+import cv2
+
+# Load the image
+image = cv2.imread('image.jpg')
+
+# Convert the image to grayscale
+gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+# Extract edges using the Canny algorithm
+edges = cv2.Canny(gray_image, 50, 150)
+
+# Display the edges
+cv2.imshow('Edges', edges)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+**Expected Result:**
+The edges of the image should be extracted and displayed.
+
+---
+
+### Step 5: Extracting Lines
+
+Extract lines from an image using the `cv2.HoughLines()` function.
+```python
+import cv2
+import numpy as np
+
+# Load the image
+image = cv2.imread('image.jpg')
+
+# Convert the image to grayscale
+gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+# Extract edges using the Canny algorithm
+edges = cv2.Canny(gray_image, 50, 150)
+
+# Extract lines using the Hough transform
+lines = cv2.HoughLines(edges, 1, np.pi/180, 200)
+
+# Draw the lines on the original image
+for line in lines:
+    rho, theta = line[0]
+    a = np.cos(theta)
+    b = np.sin(theta)
+    x0 = a * rho
+    y0 = b * rho
+    x1 = int(x0 + 1000 * -b)
+    y1 = int(y0 + 1000 * a)
+    x2 = int(x0 - 1000 * -b)
+    y2 = int(y0 - 1000 * a)
+    cv2.line(image, (x1, y1), (x2, y2), (0, 255, 0), 2)
+
+# Display the image with lines
+cv2.imshow('Lines', image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+**Expected Result:**
+The lines of the image should be extracted and displayed.
+
+---
+
+### Summary
+In this lab, you have applied image transformations and feature extraction techniques using OpenCV. You have resized, rotated, and flipped images, as well as extracted features such as edges and lines.
+
+### Optional Challenge
+Try to extract shapes from an image using the `cv2.findContours()` function.

@@ -1,0 +1,75 @@
+quiz_prompt_template = """You are an expert in educational assessment design.
+
+Create a quiz for Day {day_number} with EXACTLY {questions_count} questions.
+
+COURSE CONTEXT:
+{validated_course_json}
+
+DAY INFORMATION:
+- Day: {day_number}
+- Title: {day_title}
+
+SLIDES CONTENT:
+{day_slides_content}
+
+RULES:
+1. Exactly {questions_count} multiple-choice questions
+2. 4 options (A, B, C, D) per question
+3. Test understanding, not memorization
+4. Mix difficulty levels
+5. NO answers or explanations after questions
+6. ALL answers at END of file only
+
+FORBIDDEN:
+- Do NOT show answers after each question
+- Do NOT reference slide titles
+- Do NOT include explanations with questions
+
+OUTPUT (Quarto Markdown):
+
+# Quiz {day_number}: {day_title}
+
+## Instructions
+- {questions_count} questions total
+- Select best answer (A, B, C, D)
+- Answers at end of quiz
+
+---
+
+### Question 1
+
+[Clear question testing understanding]
+
+A) [Option]
+B) [Option]
+C) [Option]
+D) [Option]
+
+---
+
+### Question 2
+
+[Next question]
+
+A) [Option]
+B) [Option]
+C) [Option]
+D) [Option]
+
+---
+
+[Continue for all {questions_count} questions]
+
+---
+
+## Answer Key
+
+**Question 1:** B
+*Why: Brief explanation*
+
+**Question 2:** C
+*Why: Brief explanation*
+
+[Continue for all questions]
+
+Generate complete quiz now."""

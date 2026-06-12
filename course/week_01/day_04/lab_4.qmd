@@ -1,0 +1,113 @@
+# Lab 4: Feature Extraction with OpenCV
+
+## Extracting Meaningful Features from Images
+
+### Objective
+In this lab, you'll learn how to extract meaningful features from images using OpenCV. You'll understand the importance of feature extraction in computer vision and practice implementing various techniques to extract features from images.
+
+### Prerequisites
+- Basic understanding of Python programming
+- Familiarity with OpenCV library
+- Understanding of image transformations and kernel convolution
+
+---
+
+### Step 1: Thresholding
+
+Apply thresholding to an image to separate it into different regions based on pixel intensity.
+```python
+import cv2
+import numpy as np
+
+# Load the image
+image = cv2.imread('image.jpg')
+
+# Convert the image to grayscale
+gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+# Apply thresholding
+_, thresh_image = cv2.threshold(gray_image, 127, 255, cv2.THRESH_BINARY)
+
+# Display the thresholded image
+cv2.imshow('Thresholded Image', thresh_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+**Expected Result:**
+The thresholded image should display distinct regions based on pixel intensity.
+
+---
+
+### Step 2: Edge Detection
+
+Use the Canny edge detection algorithm to identify the boundaries between objects in an image.
+```python
+import cv2
+import numpy as np
+
+# Load the image
+image = cv2.imread('image.jpg')
+
+# Convert the image to grayscale
+gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+# Apply Gaussian blur to reduce noise
+blurred_image = cv2.GaussianBlur(gray_image, (5, 5), 0)
+
+# Apply Canny edge detection
+edges = cv2.Canny(blurred_image, 50, 150)
+
+# Display the edges
+cv2.imshow('Edges', edges)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+**Expected Result:**
+The edges in the image should be clearly visible, indicating the boundaries between objects.
+
+---
+
+### Step 3: Feature Descriptors
+
+Use the SIFT feature descriptor to describe the local features of an image.
+```python
+import cv2
+import numpy as np
+
+# Load the image
+image = cv2.imread('image.jpg')
+
+# Convert the image to grayscale
+gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+# Create a SIFT feature descriptor
+sift = cv2.SIFT_create()
+
+# Detect keypoints and compute descriptors
+keypoints, descriptors = sift.detectAndCompute(gray_image, None)
+
+# Draw the keypoints on the image
+image_with_keypoints = cv2.drawKeypoints(image, keypoints, None)
+
+# Display the image with keypoints
+cv2.imshow('Image with Keypoints', image_with_keypoints)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+**Expected Result:**
+The image should display keypoints, indicating the locations of interest in the image.
+
+---
+
+### Summary
+In this lab, you've learned how to extract meaningful features from images using OpenCV. You've practiced applying thresholding, edge detection, and feature descriptors to extract features from images. These techniques are essential in computer vision for object recognition, image classification, and scene understanding.
+
+- You've applied thresholding to separate an image into different regions based on pixel intensity.
+- You've used edge detection to identify the boundaries between objects in an image.
+- You've used feature descriptors to describe the local features of an image.
+
+### Optional Challenge
+Try applying these feature extraction techniques to different images and observe the results. You can also experiment with other feature extraction techniques, such as histogram-based features and texture features, to see how they perform on various images.

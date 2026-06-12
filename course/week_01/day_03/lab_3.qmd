@@ -1,0 +1,131 @@
+# Lab 3: Image Transformations and Feature Extraction
+
+## Applying Image Transformations and Feature Extraction Techniques
+
+### Objective
+In this lab, you will learn how to apply image transformations and feature extraction techniques using OpenCV. You will understand how to use different functions to transform images, extract features, and analyze the results.
+
+### Prerequisites
+- Python programming
+- OpenCV library
+- Basic understanding of image processing concepts
+
+---
+
+### Step 1: Image Loading and Display
+
+Load an image using OpenCV and display it using the `cv2.imshow()` function.
+```python
+import cv2
+
+# Load the image
+image = cv2.imread('image.jpg')
+
+# Display the image
+cv2.imshow('Original Image', image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+**Expected Result:**
+The original image should be displayed in a window.
+
+---
+
+### Step 2: Image Resizing
+
+Resize the image using the `cv2.resize()` function and display the resized image.
+```python
+# Resize the image
+resized_image = cv2.resize(image, (800, 600))
+
+# Display the resized image
+cv2.imshow('Resized Image', resized_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+**Expected Result:**
+The resized image should be displayed in a window.
+
+---
+
+### Step 3: Image Rotation
+
+Rotate the image using the `cv2.getRotationMatrix2D()` and `cv2.warpAffine()` functions and display the rotated image.
+```python
+# Define the rotation center and angle
+rotation_center = (image.shape[1] // 2, image.shape[0] // 2)
+angle = 45
+
+# Get the rotation matrix
+rotation_matrix = cv2.getRotationMatrix2D(rotation_center, angle, 1.0)
+
+# Rotate the image
+rotated_image = cv2.warpAffine(image, rotation_matrix, (image.shape[1], image.shape[0]))
+
+# Display the rotated image
+cv2.imshow('Rotated Image', rotated_image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+**Expected Result:**
+The rotated image should be displayed in a window.
+
+---
+
+### Step 4: Edge Detection
+
+Detect edges in the image using the `cv2.Canny()` function and display the edge map.
+```python
+# Detect edges
+edge_map = cv2.Canny(image, 100, 200)
+
+# Display the edge map
+cv2.imshow('Edge Map', edge_map)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+**Expected Result:**
+The edge map should be displayed in a window.
+
+---
+
+### Step 5: Feature Extraction
+
+Extract features from the image using the `cv2.goodFeaturesToTrack()` function and display the features.
+```python
+# Convert the image to grayscale
+gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+
+# Extract features
+features = cv2.goodFeaturesToTrack(gray_image, 100, 0.3, 10)
+
+# Draw the features on the image
+for feature in features:
+    x, y = feature.ravel()
+    cv2.circle(image, (int(x), int(y)), 5, (0, 255, 0), -1)
+
+# Display the features
+cv2.imshow('Features', image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+**Expected Result:**
+The features should be displayed on the image in a window.
+
+---
+
+### Summary
+In this lab, you have learned how to apply image transformations and feature extraction techniques using OpenCV. You have used different functions to load and display images, resize and rotate images, detect edges, and extract features.
+
+- Loaded and displayed an image
+- Resized and rotated the image
+- Detected edges in the image
+- Extracted features from the image
+
+### Optional Challenge
+Try to apply different image transformations and feature extraction techniques to a video stream. Use the `cv2.VideoCapture()` function to capture a video stream and apply the techniques to each frame.

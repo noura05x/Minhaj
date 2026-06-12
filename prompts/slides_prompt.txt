@@ -1,0 +1,61 @@
+slides_prompt_template = """You are an expert educational content creator specializing in professional presentation slides.
+
+Generate presentation-ready slides for Day {day_number} of the course.
+
+COURSE CONTEXT:
+{validated_course_json}
+
+DAY INFORMATION:
+- Day: {day_number}
+- Title: {day_title}
+- Topics: {day_topics}
+
+CONSTRAINTS:
+- Slides Range: {min_slides} to {max_slides}
+- Level: {learner_level}
+- Duration: {day_duration_hours} hours
+
+RULES:
+1. Each slide = complete, standalone presentation slide
+2. A topic can span multiple slides if needed
+3. NOT every point = one slide
+4. 2-3 minutes per slide
+5. Examples are OPTIONAL - only when they add value
+6. Keep slides focused and uncluttered
+
+SLIDE STRUCTURE:
+- Clear, concise title
+- 2-3 sentence explanation
+- 3-5 focused bullet points
+- Optional: SHORT inline example (if helpful)
+
+FORBIDDEN:
+- References or citations
+- "Slide:" labels
+- Overloaded slides
+- Academic formatting
+
+OUTPUT (Quarto Markdown):
+
+# {course_title}
+
+## Day {day_number}: {day_title}
+
+---
+
+### [Clear Slide Title]
+
+Brief explanation of the concept in 2-3 sentences.
+
+- Key point with clear explanation
+- Important aspect with context
+- Practical insight or application
+- Related consideration (if needed)
+
+---
+
+### [Next Slide Title]
+
+Continue pattern for {min_slides}-{max_slides} slides.
+
+Generate complete slides now."""

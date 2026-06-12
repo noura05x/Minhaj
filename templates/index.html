@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minhaj – AI Curriculum Builder</title>
+
+
+  <!-- Tailwind (fixed URL spacing) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="bg-slate-50">
+
+
+<!-- Main Content -->
+<div class="min-h-screen bg-[#F5F5FB]">
+
+  <!-- Hero -->
+ <section class="pt-20 pb-16 text-center px-6">
+
+    <img src="/static/assets/minhaj-logo.png"
+         class="w-[430px] mx-auto mb-0.5"
+         alt="Minhaj Logo">
+
+    <h1 class="text-6xl font-extrabold text-slate-900 text-center mb-4">
+      Minhaj
+    </h1>
+
+    <p class="text-xl text-slate-600 max-w-2xl mx-auto text-center">
+      Generate slides, labs, assessments and exams in minutes using AI-powered curriculum design.
+    </p>
+
+  </section>
+
+
+  <!-- Main Card -->
+  <section class="max-w-5xl mx-auto px-6 pb-8">
+
+<div class="bg-white
+            border border-slate-200
+            rounded-3xl
+            shadow-xl
+            p-10">
+
+
+
+  
+    <!-- Form -->
+    <form id="curriculumForm">
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- 1. Target Topic -->
+        <div class="md:col-span-2">
+          <label class="block mb-1 text-sm font-medium text-gray-800">Target Topic
+            <span class="text-red-500 ml-0.5">*</span></label>
+          <input class="input" id="topic" name="topic" placeholder="MLOps, React Development, Computer Vision" required>
+        </div>
+      
+    
+
+        <!-- 2. Learner Level -->
+        <div>
+          <label class="block mb-1 text-sm font-medium text-gray-800">Learner Level
+            <span class="text-red-500 ml-0.5">*</span></label>
+          <select class="input" id="learner_level" name="learner_level" required>
+            <option value="">Select proficiency level</option>
+            <option value="beginner">Beginner (no prior experience)</option>
+            <option value="intermediate">Intermediate (some hands-on experience)</option>
+            <option value="advanced">Advanced (comfortable with core concepts)</option>
+          </select>
+        </div>
+
+        <!-- 3. Duration Constraints -->
+        <div>
+           <label class="block mb-1 text-sm font-medium text-gray-800">Duration Constraints
+            <span class="text-red-500 ml-0.5">*</span></label>
+          <input type="number" min="1" max="12" class="input" id="duration_weeks" name="duration_weeks" placeholder="Number of weeks (max 12)" required>
+          <p class="hint text-xs text-gray-500 mt-1">Recommended: 4-8 weeks for comprehensive coverage</p>
+        </div>
+        
+        
+
+        <!-- 4. Preferred Tools/Technologies -->
+        <div class="md:col-span-2">
+          <label class="label block mb-1 text-sm font-medium text-gray-800"> Preferred Tools & Technologies</label>
+          <input class="input" id="tools" name="tools" placeholder="Python, Docker, GCP, PyTorch, React">
+          <p class="hint text-xs text-gray-500 mt-1">Leave blank for AI-recommended stack</p>
+        </div>
+
+        <!-- 5. Learning Goals -->
+        <div class="md:col-span-2">
+          <label class="label block mb-1 text-sm font-medium text-gray-800">Learning Goals</label>
+          <textarea class="input" id="learning_goals" name="learning_goals" rows="3" 
+            placeholder="Build production ML pipelines, deploy models to cloud, write maintainable MLOps code"></textarea>
+        </div>
+
+        <!-- 6. Constraints & Requests -->
+        <div class="md:col-span-2">
+          <label class="label block mb-1 text-sm font-medium text-gray-800"> Constraints & Special Requests</label>
+          <textarea class="input" id="constraints" name="constraints" rows="3"
+            placeholder="Time limitations, prerequisites, accessibility needs, assessment preferences, or other requirements"></textarea>
+        </div>
+
+        <!-- Reference Material -->
+<div class="md:col-span-2">
+  <label class="label block mb-2 text-sm font-medium text-gray-800">
+    Reference Material
+  </label>
+
+  <div class="reference-card">
+    <div class="flex items-center gap-3">
+      <span class="text-xl">🔗</span>
+      <span class="text-sm">
+        Attach syllabus, book, or resource URL
+      </span>
+    </div>
+
+    <input
+      id="reference_link"
+      name="reference_link"
+      type="url"
+      class="input mt-3"
+      placeholder="https://example.com">
+  </div>
+</div>
+
+</div> <!-- end grid -->
+
+
+<div id="progressContainer" class="hidden mt-8">
+    
+    <div class="flex justify-between text-sm text-slate-600 mb-2">
+        <span>Estimated Generation Time</span>
+        <span id="progressPercent">0%</span>
+    </div>
+
+    <div class="w-full bg-slate-200 rounded-full h-3">
+        <div
+            id="progressBar"
+            class="bg-[#142B7A] h-3 rounded-full transition-all duration-500"
+            style="width:0%">
+        </div>
+    </div>
+
+    <p id="progressText"
+       class="text-center text-sm text-slate-500 mt-2">
+    </p>
+
+</div>
+
+<button
+  type="button"
+  onclick="generateCurriculum(event)"
+  class="mt-10 w-full bg-[#142B7A] text-white font-semibold py-4 rounded-2xl shadow-lg hover:bg-[#0F2364] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
+   Generate Curriculum
+</button>
+
+<p id="status"
+   class="mt-4 text-center text-sm text-gray-600 min-h-[24px]">
+</p>
+
+<pre id="output"
+     class="mt-6 p-4 bg-slate-100 text-xs rounded overflow-auto max-h-96 hidden">
+</pre>
+</form>
+
+</div>      <!-- glass card -->
+
+</section>  <!-- max-w-5xl -->
+
+</div>  
+
+
+
+<script>
+async function generateCurriculum() {
+    const form = document.getElementById("curriculumForm");
+    const button = event.target;
+    
+    // Build JSON from form matching your 6 categories
+    const data = {
+        target_topic: form.topic.value.trim(),
+        learner_level: form.learner_level.value,
+        duration_weeks: parseInt(form.duration_weeks.value) || 0,
+        preferred_tools: form.tools.value.trim(),
+        learning_goals: form.learning_goals.value.trim(),
+        constraints_requests: form.constraints.value.trim(),
+        reference_link: form.reference_link.value.trim()
+    };
+
+    // Validation
+    if (!data.target_topic || !data.learner_level || !data.duration_weeks) {
+        document.getElementById("status").textContent = " ! Please fill required fields (Topic, Level, Duration)";
+        return;
+    }
+    
+    if (data.duration_weeks < 1 || data.duration_weeks > 8) {
+        document.getElementById("status").textContent = "! Duration must be between 1-8 weeks";
+        return;
+    }
+
+    button.disabled = true;
+    button.classList.add('opacity-50', 'cursor-not-allowed');
+    button.textContent = 'Generating...';
+    
+
+    document.getElementById("status").innerHTML = `
+  <div style="display:flex; justify-content:center; align-items:center; height:100%;">
+    <img src="/static/assets/loading.gif" alt="Loading..." style="width:50px; height:50px;">
+    <span class="ml-3">Generating content, this may take a moment...</span>
+  </div>
+`;
+    await new Promise(resolve => setTimeout(resolve, 100));
+
+
+
+    try {
+        const response = await fetch("/generate", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
+
+        if (!response.ok) throw new Error('Network response was not ok');
+        
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+
+        // Create a temporary link and click it to trigger download
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = "course.zip"; // suggested filename
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+
+        // Clean up object URL
+        window.URL.revokeObjectURL(url);
+
+        document.getElementById("status").textContent = " ✔ Curriculum ZIP is downloaded!";
+
+
+    } catch (error) {
+        document.getElementById("status").textContent = " x Generation failed. Please try again.";
+        console.error("Generation error:", error);
+    }
+    finally {
+        // RE-ENABLE BUTTON after completion
+        button.disabled = false;
+        button.classList.remove('opacity-50', 'cursor-not-allowed');
+        button.textContent = 'Generate Curriculum ZIP';
+    }
+}
+
+// Theme toggle persistence
+
+</script>
+<footer class="py-8 text-center text-sm text-slate-600">
+  © 2026 - Built with ❤︎⁠ by <span>Noura Aljandol - Fai Bin Onayq - Wajan Alqahtani</span>
+</footer>
+</body>
+</html>

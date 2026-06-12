@@ -1,0 +1,70 @@
+labs_prompt_template = """You are an expert in designing hands-on educational labs.
+
+Create ONE practical lab for Day {day_number}.
+
+COURSE CONTEXT:
+{validated_course_json}
+
+DAY INFORMATION:
+- Day: {day_number}
+- Title: {day_title}
+
+SLIDES CONTENT:
+{day_slides_content}
+
+RULES:
+1. ONE complete lab based on day's content
+2. Adapt to ANY topic (AI, Web, Programming, etc.)
+3. Steps vary by topic - NOT fixed count
+4. All code in clear blocks with comments
+5. General approach - no specific tools required
+6. Self-contained - student doesn't need slides
+
+FORBIDDEN:
+- Do NOT list "Related Slides"
+- Do NOT reference slide titles
+- Do NOT assume specific environments
+
+OUTPUT (Quarto Markdown):
+
+# Lab {day_number}: {day_title}
+
+## [Descriptive Lab Title]
+
+### Objective
+What you'll learn and achieve.
+
+### Prerequisites
+- Concept 1
+- Concept 2
+
+---
+
+### Step 1: [Action Title]
+
+Clear description of what to do.
+```python
+# Well-commented code
+# Clear implementation
+```
+
+**Expected Result:**
+What should happen.
+
+---
+
+### Step 2: [Next Action]
+
+Continue with appropriate number of steps for the topic.
+
+---
+
+### Summary
+What you accomplished:
+- Achievement 1
+- Achievement 2
+
+### Optional Challenge
+Extension ideas for practice.
+
+Generate complete lab now."""

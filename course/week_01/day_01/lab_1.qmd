@@ -1,0 +1,95 @@
+# Lab 1: Introduction to Computer Vision with OpenCV
+
+## Capturing and Displaying an Image
+
+### Objective
+In this lab, you will learn how to install OpenCV and NumPy libraries, capture an image using OpenCV, and display it. You will understand the basics of computer vision and how to use OpenCV functions to read and display images.
+
+### Prerequisites
+- Python Programming
+- Linear Algebra
+- Calculus
+- Probability and Statistics
+
+---
+
+### Step 1: Install OpenCV and NumPy Libraries
+
+To start working with computer vision, you need to have OpenCV and NumPy libraries installed. You can install them using pip, the package installer for Python.
+```python
+# Install OpenCV
+pip install opencv-python
+
+# Install NumPy
+pip install numpy
+```
+**Expected Result:**
+OpenCV and NumPy libraries should be successfully installed.
+
+---
+
+### Step 2: Capture and Display an Image
+
+Now, you can use OpenCV to capture and display an image. You will use the `cv2.imread()` function to read an image and the `cv2.imshow()` function to display the image.
+```python
+import cv2
+
+# Read an image
+img = cv2.imread('image.jpg')
+
+# Check if the image is loaded correctly
+if img is None:
+    print("Error: Could not load image")
+else:
+    # Display the image
+    cv2.imshow('Image', img)
+
+    # Wait for a key press
+    cv2.waitKey(0)
+
+    # Close all windows
+    cv2.destroyAllWindows()
+```
+**Expected Result:**
+The image should be displayed in a window, and you should be able to close the window by pressing a key.
+
+---
+
+### Step 3: Handle Errors and Exceptions
+
+It's essential to handle errors and exceptions when working with computer vision. You can use try-except blocks to catch and handle exceptions.
+```python
+import cv2
+
+try:
+    # Read an image
+    img = cv2.imread('image.jpg')
+
+    # Check if the image is loaded correctly
+    if img is None:
+        print("Error: Could not load image")
+    else:
+        # Display the image
+        cv2.imshow('Image', img)
+
+        # Wait for a key press
+        cv2.waitKey(0)
+
+        # Close all windows
+        cv2.destroyAllWindows()
+except Exception as e:
+    print("An error occurred: ", str(e))
+```
+**Expected Result:**
+The program should handle errors and exceptions correctly and display an error message if something goes wrong.
+
+---
+
+### Summary
+In this lab, you:
+- Installed OpenCV and NumPy libraries
+- Captured and displayed an image using OpenCV
+- Handled errors and exceptions
+
+### Optional Challenge
+Try to capture and display a video using OpenCV. You can use the `cv2.VideoCapture()` function to capture a video and the `cv2.imshow()` function to display it.

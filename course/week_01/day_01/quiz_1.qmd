@@ -1,0 +1,75 @@
+# Quiz 1: Day 1
+
+## Instructions
+- 5 questions total
+- Select best answer (A, B, C, D)
+- Answers at end of quiz
+
+---
+
+### Question 1
+What is the primary goal of computer vision as a field of artificial intelligence?
+
+A) To enable computers to process and analyze textual data
+B) To enable computers to interpret and understand visual information from the world
+C) To develop algorithms for audio processing
+D) To create autonomous vehicles without using visual data
+
+---
+
+### Question 2
+Which of the following is NOT a real-world application of computer vision?
+
+A) Medical diagnosis systems
+B) Surveillance systems
+C) Autonomous vehicles
+D) Developing operating systems
+
+---
+
+### Question 3
+What is a crucial step in getting started with computer vision projects?
+
+A) Installing OpenCV and NumPy libraries
+B) Learning advanced calculus
+C) Purchasing a high-end graphics card
+D) Mastering a programming language other than Python
+
+---
+
+### Question 4
+How can you display an image using OpenCV in Python?
+
+A) Using the `cv2.read()` function
+B) Using the `cv2.imshow()` function
+C) Using the `cv2.waitKey()` function
+D) Using the `cv2.destroyAllWindows()` function alone
+
+---
+
+### Question 5
+What is an essential math concept for understanding computer vision?
+
+A) Geometry
+B) Linear Algebra
+C) Trigonometry
+D) Only Probability and Statistics
+
+---
+
+## Answer Key
+
+**Question 1:** B
+*Why: Computer vision is defined as a field of artificial intelligence that enables computers to interpret and understand visual information from the world.*
+
+**Question 2:** D
+*Why: Developing operating systems is not listed as an application of computer vision in the provided context.*
+
+**Question 3:** A
+*Why: Installing OpenCV and NumPy libraries is mentioned as a crucial step in getting started with computer vision projects.*
+
+**Question 4:** B
+*Why: The `cv2.imshow()` function is used to display an image in OpenCV.*
+
+**Question 5:** B
+*Why: Linear Algebra is listed as one of the essential math concepts for understanding computer vision.*

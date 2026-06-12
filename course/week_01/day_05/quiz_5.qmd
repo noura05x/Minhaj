@@ -1,0 +1,75 @@
+# Quiz 5: Day 5
+
+## Instructions
+- 5 questions total
+- Select best answer (A, B, C, D)
+- Answers at end of quiz
+
+---
+
+### Question 1
+What is the primary purpose of image filtering in computer vision?
+
+A) To remove noise from an image
+B) To enhance image features
+C) To detect objects in an image
+D) To recognize faces in an image
+
+---
+
+### Question 2
+Which of the following image transformations preserves straight lines and ratios?
+
+A) Perspective transformation
+B) Affine transformation
+C) Image warping
+D) Rotation
+
+---
+
+### Question 3
+What is the role of a kernel in image processing?
+
+A) To apply a filter to an image
+B) To extract features from an image
+C) To perform a dot product at each position in an image
+D) To transform an image into a new coordinate system
+
+---
+
+### Question 4
+Which of the following techniques is used to separate objects from the background in an image?
+
+A) Edge detection
+B) Thresholding
+C) Image segmentation
+D) Object recognition
+
+---
+
+### Question 5
+What is the primary application of convolutional neural networks (CNNs) in computer vision?
+
+A) Image classification
+B) Object detection
+C) Image segmentation
+D) All of the above
+
+---
+
+## Answer Key
+
+**Question 1:** A
+*Why: Image filtering is used to remove noise from an image, which is a crucial step in image processing.*
+
+**Question 2:** B
+*Why: Affine transformation preserves straight lines and ratios, which is essential in computer vision for tasks such as image alignment and comparison.*
+
+**Question 3:** C
+*Why: A kernel performs a dot product at each position in an image, generating a feature map that is used in image processing tasks such as filtering and feature extraction.*
+
+**Question 4:** B
+*Why: Thresholding is a technique used to separate objects from the background in an image, which is a critical step in image segmentation and object recognition.*
+
+**Question 5:** D
+*Why: Convolutional neural networks (CNNs) have a wide range of applications in computer vision, including image classification, object detection, and image segmentation, making them a fundamental tool in the field.*

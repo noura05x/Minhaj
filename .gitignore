@@ -1,0 +1,9 @@
+.venv
+multi-agent-system
+project-test1
+bin
+__pycache__
+*.pyc
+.env
+.env.*
+.vscode

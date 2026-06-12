@@ -1,0 +1,75 @@
+# Quiz 4: Day 4
+
+## Instructions
+- 5 questions total
+- Select best answer (A, B, C, D)
+- Answers at end of quiz
+
+---
+
+### Question 1
+What is the primary purpose of feature extraction in computer vision?
+
+A) To reduce the dimensionality of image data
+B) To increase the complexity of image data
+C) To improve the resolution of images
+D) To change the format of images
+
+---
+
+### Question 2
+Which of the following feature extraction techniques involves separating an image into different regions based on pixel intensity?
+
+A) Edge detection
+B) Thresholding
+C) Feature descriptors
+D) Image transformations
+
+---
+
+### Question 3
+What is the role of OpenCV functions, such as `cv2.threshold()` and `cv2.Canny()`, in feature extraction?
+
+A) To extract global features from images
+B) To extract local features from images
+C) To apply thresholding and edge detection techniques
+D) To improve the resolution of images
+
+---
+
+### Question 4
+How do variations in lighting, pose, and occlusion affect feature extraction in computer vision?
+
+A) They improve the accuracy and robustness of feature extraction
+B) They have no impact on feature extraction
+C) They reduce the complexity of image data
+D) They affect the accuracy and robustness of feature extraction
+
+---
+
+### Question 5
+What is the expected outcome of ongoing research in deep learning and convolutional neural networks for feature extraction in computer vision?
+
+A) Reduced accuracy and robustness of computer vision systems
+B) Improved accuracy and robustness of computer vision systems
+C) Increased complexity of image data
+D) Decreased importance of feature extraction in computer vision
+
+---
+
+## Answer Key
+
+**Question 1:** A
+*Why: The primary purpose of feature extraction is to reduce the dimensionality of image data while preserving the most important features.*
+
+**Question 2:** B
+*Why: Thresholding involves separating an image into different regions based on pixel intensity.*
+
+**Question 3:** C
+*Why: OpenCV functions, such as `cv2.threshold()` and `cv2.Canny()`, are used to apply thresholding and edge detection techniques in feature extraction.*
+
+**Question 4:** D
+*Why: Variations in lighting, pose, and occlusion can affect the accuracy and robustness of feature extraction in computer vision.*
+
+**Question 5:** B
+*Why: Ongoing research in deep learning and convolutional neural networks is expected to improve the accuracy and robustness of computer vision systems.*

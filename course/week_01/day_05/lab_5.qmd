@@ -1,0 +1,106 @@
+# Lab 5: Image Processing and Feature Extraction
+
+## Introduction to Image Filtering and Edge Detection
+
+### Objective
+In this lab, you will learn to apply image filtering techniques and edge detection to extract relevant features from images. You will achieve a basic understanding of how to enhance, transform, and analyze images using Python and OpenCV.
+
+### Prerequisites
+- Basic understanding of Python programming
+- Familiarity with OpenCV library
+- Understanding of image transformations and kernel convolution
+
+---
+
+### Step 1: Installing Required Libraries and Loading Images
+
+To start with image processing, you need to have the necessary libraries installed. You will use OpenCV for image processing and NumPy for numerical operations. Load an image using OpenCV and display it.
+```python
+# Import necessary libraries
+import cv2
+import numpy as np
+
+# Load an image
+image = cv2.imread('image.jpg')
+
+# Display the image
+cv2.imshow('Original Image', image)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+**Expected Result:**
+You should see the original image displayed on the screen.
+
+---
+
+### Step 2: Applying Image Filtering
+
+Apply a Gaussian blur filter to the image to reduce noise. Then, apply a threshold to segment out objects from the background.
+```python
+# Apply Gaussian blur
+blurred_image = cv2.GaussianBlur(image, (5, 5), 0)
+
+# Apply thresholding
+_, thresh = cv2.threshold(cv2.cvtColor(blurred_image, cv2.COLOR_BGR2GRAY), 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+
+# Display the thresholded image
+cv2.imshow('Thresholded Image', thresh)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+**Expected Result:**
+You should see the thresholded image with objects segmented from the background.
+
+---
+
+### Step 3: Edge Detection
+
+Apply the Canny edge detection algorithm to the original image to find edges.
+```python
+# Apply Canny edge detection
+edges = cv2.Canny(image, 50, 150)
+
+# Display the edges
+cv2.imshow('Edges', edges)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+**Expected Result:**
+You should see the edges detected in the original image.
+
+---
+
+### Step 4: Combining Image Filtering and Edge Detection
+
+Combine the image filtering and edge detection techniques to create a more robust feature extraction pipeline.
+```python
+# Apply Gaussian blur and then Canny edge detection
+blurred_image = cv2.GaussianBlur(image, (5, 5), 0)
+edges_blurred = cv2.Canny(blurred_image, 50, 150)
+
+# Display the edges with Gaussian blur
+cv2.imshow('Edges with Gaussian Blur', edges_blurred)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+```
+
+**Expected Result:**
+You should see the edges detected in the blurred image, which reduces the effect of noise.
+
+---
+
+### Summary
+In this lab, you have learned to:
+- Load and display images using OpenCV
+- Apply image filtering techniques (Gaussian blur) to reduce noise
+- Apply thresholding to segment objects from the background
+- Apply edge detection (Canny) to find edges in an image
+- Combine image filtering and edge detection for robust feature extraction
+
+### Optional Challenge
+- Apply different image filtering techniques (e.g., median blur, bilateral filter) and compare the results.
+- Experiment with different thresholding techniques (e.g., Otsu's thresholding, adaptive thresholding) and evaluate their performance.
+- Use edge detection as a preprocessing step for object recognition tasks.
