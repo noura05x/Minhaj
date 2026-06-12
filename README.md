@@ -1,6 +1,6 @@
 
 
-## Minhaj – AI Curriculum Builder 🎓
+## Minhaj – AI Curriculum Builder 
 
 Minhaj is an agent-based AI system that transforms instructor inputs into a complete, structured, and exportable curriculum  including syllabus, slides, labs, and exams. in just one click.
 
