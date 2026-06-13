@@ -92,3 +92,11 @@ body {
     border-color:#8b5cf6;
     transform:translateY(-2px);
 }
+
+.notranslate {
+    direction: ltr !important;
+}
+
+.language-switch{
+    direction:ltr !important;
+}

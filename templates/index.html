@@ -30,11 +30,11 @@
          class="w-[300px] mx-auto mb-0.5"
          alt="Minhaj Logo">
 
-    <h1 class="text-6xl font-extrabold text-slate-900 text-center mb-4">
+    <h1 id="heroTitle" class="text-6xl font-extrabold text-slate-900 text-center mb-4">
       Minhaj
     </h1>
 
-    <p class="text-xl text-slate-600 max-w-2xl mx-auto text-center">
+    <p id="heroDescription" class="text-xl text-slate-600 max-w-2xl mx-auto text-center">
       Generate slides, labs, assessments and exams in minutes using AI-powered curriculum design.
     </p>
 
@@ -55,69 +55,107 @@
   
     <!-- Form -->
     <form id="curriculumForm">
-      <div class="grid md:grid-cols-2 gap-8">
+       <div
+  class="flex justify-end mb-6" style="direction:ltr;">
+
+  <div class="flex items-center gap-2 notranslate">
+
+    <span id="langLabel"
+          class="text-sm font-medium text-slate-600 w-6 text-center">
+      EN
+    </span>
+
+    <label class="relative inline-flex items-center cursor-pointer">
+
+      <input
+        type="checkbox"
+        id="langToggle"
+        class="sr-only peer"
+        onchange="toggleLanguage()">
+
+      <div class="w-16 h-8 bg-slate-300 rounded-full
+                  peer-checked:bg-[#142B7A]
+                  transition-all duration-300">
+      </div>
+
+      <div class="absolute left-1 top-1 w-6 h-6 bg-white
+                  rounded-full shadow-md
+                  transition-all duration-300
+                  peer-checked:translate-x-8">
+      </div>
+
+    </label>
+
+  </div>
+
+</div>
+
+<div class="grid md:grid-cols-2 gap-8">
         <!-- 1. Target Topic -->
         <div class="md:col-span-2">
-          <label class="block mb-1 text-sm font-medium text-gray-800">Target Topic
+          <label id="topicLabel"
+           class="block mb-1 text-sm font-medium text-gray-800">Target Topic
             <span class="text-red-500 ml-0.5">*</span></label>
           <input class="input" id="topic" name="topic" placeholder="MLOps, React Development, Computer Vision" required>
         </div>
+        
       
     
 
         <!-- 2. Learner Level -->
         <div>
-          <label class="block mb-1 text-sm font-medium text-gray-800">Learner Level
+          <label id="levelLabel"
+          class="block mb-1 text-sm font-medium text-gray-800">Learner Level
             <span class="text-red-500 ml-0.5">*</span></label>
           <select class="input" id="learner_level" name="learner_level" required>
-            <option value="">Select proficiency level</option>
-            <option value="beginner">Beginner (no prior experience)</option>
-            <option value="intermediate">Intermediate (some hands-on experience)</option>
-            <option value="advanced">Advanced (comfortable with core concepts)</option>
+            <option id="levelPlaceholder" value="">Select proficiency level</option>
+            <option id="beginnerOption" value="beginner">Beginner (no prior experience)</option>
+            <option id="intermediateOption" value="intermediate">Intermediate (some hands-on experience)</option>
+            <option id="advancedOption" value="advanced">Advanced (comfortable with core concepts)</option>
           </select>
         </div>
 
         <!-- 3. Duration Constraints -->
         <div>
-           <label class="block mb-1 text-sm font-medium text-gray-800">Duration Constraints
+           <label  id="durationLabel" class="block mb-1 text-sm font-medium text-gray-800">Duration Constraints
             <span class="text-red-500 ml-0.5">*</span></label>
           <input type="number" min="1" max="12" class="input" id="duration_weeks" name="duration_weeks" placeholder="Number of weeks (max 12)" required>
-          <p class="hint text-xs text-gray-500 mt-1">Recommended: 4-8 weeks for comprehensive coverage</p>
+          <p id="recommendationText" class="hint text-xs text-gray-500 mt-1">Recommended: 4-8 weeks for comprehensive coverage</p>
         </div>
         
         
 
         <!-- 4. Preferred Tools/Technologies -->
         <div class="md:col-span-2">
-          <label class="label block mb-1 text-sm font-medium text-gray-800"> Preferred Tools & Technologies</label>
+          <label id="toolsLabel" class="label block mb-1 text-sm font-medium text-gray-800"> Preferred Tools & Technologies</label>
           <input class="input" id="tools" name="tools" placeholder="Python, Docker, GCP, PyTorch, React">
-          <p class="hint text-xs text-gray-500 mt-1">Leave blank for AI-recommended stack</p>
+          <p id="toolsHint" class="hint text-xs text-gray-500 mt-1"></p>
         </div>
 
         <!-- 5. Learning Goals -->
         <div class="md:col-span-2">
-          <label class="label block mb-1 text-sm font-medium text-gray-800">Learning Goals</label>
+          <label id="goalsLabel" class="label block mb-1 text-sm font-medium text-gray-800">Learning Goals</label>
           <textarea class="input" id="learning_goals" name="learning_goals" rows="3" 
             placeholder="Build production ML pipelines, deploy models to cloud, write maintainable MLOps code"></textarea>
         </div>
 
         <!-- 6. Constraints & Requests -->
         <div class="md:col-span-2">
-          <label class="label block mb-1 text-sm font-medium text-gray-800"> Constraints & Special Requests</label>
+          <label id="constraintsLabel" class="label block mb-1 text-sm font-medium text-gray-800"> Constraints & Special Requests</label>
           <textarea class="input" id="constraints" name="constraints" rows="3"
             placeholder="Time limitations, prerequisites, accessibility needs, assessment preferences, or other requirements"></textarea>
         </div>
 
         <!-- Reference Material -->
 <div class="md:col-span-2">
-  <label class="label block mb-2 text-sm font-medium text-gray-800">
+  <label id="referenceLabel" class="label block mb-2 text-sm font-medium text-gray-800">
     Reference Material
   </label>
 
   <div class="reference-card">
     <div class="flex items-center gap-3">
       <span class="text-xl">🔗</span>
-      <span class="text-sm">
+      <span id="referenceDescription" class="text-sm">
         Attach syllabus, book, or resource URL
       </span>
     </div>
@@ -148,7 +186,7 @@
 <button
   type="button"
   onclick="generateCurriculum(event)"
-  class="mt-10 w-full bg-[#142B7A] text-white font-semibold py-4 rounded-2xl shadow-lg hover:bg-[#0F2364] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
+   id="generateBtn" class="mt-10 w-full bg-[#142B7A] text-white font-semibold py-4 rounded-2xl shadow-lg hover:bg-[#0F2364] hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300">
    Generate Curriculum
 </button>
 
@@ -167,7 +205,149 @@
 
 </div>  
 
+<script>
+function toggleLanguage() {
 
+  const isArabic =
+  document.getElementById("langToggle").checked;
+
+  if (isArabic) {
+
+    document.documentElement.lang = "ar";
+    document.documentElement.dir = "rtl";
+
+    document.getElementById("langLabel").textContent = "AR";
+
+    document.getElementById("topicLabel").textContent =
+      "الموضوع المستهدف";
+
+    document.getElementById("levelLabel").textContent =
+      "مستوى المتعلم";
+
+    document.getElementById("durationLabel").textContent =
+      "مدة الدورة";
+
+    document.getElementById("toolsLabel").textContent =
+      "الأدوات والتقنيات";
+
+    document.getElementById("goalsLabel").textContent =
+      "الأهداف التعليمية";
+
+    document.getElementById("constraintsLabel").textContent =
+      "المتطلبات الخاصة";
+
+    document.getElementById("referenceLabel").textContent =
+      "المراجع";
+    document.getElementById("heroTitle").textContent =
+    "منهاج";
+
+    document.getElementById("generateBtn").textContent =
+    "إنشاء المنهج";
+
+    document.getElementById("recommendationText").textContent =
+    "الموصى به: من 4 إلى 8 أسابيع لتغطية شاملة";
+
+    document.getElementById("referenceDescription").textContent =
+    "أضف رابط المنهج أو الكتاب أو أي مرجع";
+
+    document.getElementById("teamTitle").textContent =
+    "فريق العمل";
+    document.getElementById("footerBrandText").textContent =
+    "منصة مدعومة بالذكاء الاصطناعي لإنشاء المناهج والشرائح والمعامل والاختبارات خلال دقائق.";
+    document.getElementById("footerCopyright").textContent =
+    "© 2026 منهاج. تم التطوير بواسطة نورة الجندول - في ال عنيق - وجن القحطاني";
+    document.getElementById("heroDescription").textContent =
+    "أنشئ الشرائح والمعامل والاختبارات والتقييمات خلال دقائق باستخدام الذكاء الاصطناعي.";
+    
+    document.getElementById("levelPlaceholder").textContent =
+    "اختر مستوى المتعلم";
+    document.getElementById("beginnerOption").textContent =
+    "مبتدئ (بدون خبرة سابقة)";
+    document.getElementById("intermediateOption").textContent =
+    "متوسط (خبرة عملية بسيطة)";
+    document.getElementById("advancedOption").textContent =
+    "متقدم (متمكن من المفاهيم الأساسية)";
+    document.getElementById("nouraName").textContent =
+    "نورة الجندول";
+    document.getElementById("faiName").textContent =
+    "في ال عنيق";
+    document.getElementById("wajnName").textContent =
+    "وجن القحطاني";
+    document.getElementById("footername").textContent =
+    "منهاج";
+    document.getElementById("gitlink").textContent =
+   "قيت هب";
+
+
+  } else {
+
+    document.documentElement.lang = "en";
+    document.documentElement.dir = "ltr";
+
+    document.getElementById("langLabel").textContent = "EN";
+
+    document.getElementById("topicLabel").textContent =
+      "Target Topic";
+
+    document.getElementById("levelLabel").textContent =
+      "Learner Level";
+
+    document.getElementById("durationLabel").textContent =
+      "Duration Constraints";
+
+    document.getElementById("toolsLabel").textContent =
+      "Preferred Tools & Technologies";
+
+    document.getElementById("goalsLabel").textContent =
+      "Learning Goals";
+
+    document.getElementById("constraintsLabel").textContent =
+      "Constraints & Special Requests";
+
+    document.getElementById("referenceLabel").textContent =
+      "Reference Material";
+
+    document.getElementById("referenceDescription").textContent =
+    "Attach syllabus, book, or resource URL";
+
+    document.getElementById("heroTitle").textContent =
+    "Minhaj";
+
+    document.getElementById("generateBtn").textContent =
+    "Generate Curriculum";
+
+    document.getElementById("recommendationText").textContent =
+    "Recommended: 4-8 weeks for comprehensive coverage";
+
+    document.getElementById("footerBrandText").textContent =
+    "AI-powered curriculum generation platform that creates slides, labs, assessments and complete learning materials in minutes.";
+
+    document.getElementById("heroDescription").textContent =
+    "Generate slides, labs, assessments and exams in minutes using AI-powered curriculum design.";
+
+    document.getElementById("levelPlaceholder").textContent =
+    "Select proficiency level";
+    document.getElementById("beginnerOption").textContent =
+    "Beginner (no prior experience)";
+    document.getElementById("intermediateOption").textContent =
+    "Intermediate (some hands-on experience)";
+    document.getElementById("advancedOption").textContent =
+    "Advanced (comfortable with core concepts)";
+    document.getElementById("nouraName").textContent =
+    "Norah Aljandol";
+    document.getElementById("faiName").textContent =
+    "Fai AlOnayq";
+    document.getElementById("wajnName").textContent =
+    "Wajn Alqahtani";
+    document.getElementById("footername").textContent =
+    "Minhaj";
+    document.getElementById("gitlink").textContent =
+   "GitHub";
+
+
+  }  
+}
+</script>
 
 <script>
 async function generateCurriculum() {
@@ -313,11 +493,11 @@ const stageInterval = setInterval(() => {
 
       <!-- Brand -->
       <div>
-        <h3 class="text-2xl font-bold text-white mb-4">
+        <h3 id="footername"class="text-2xl font-bold text-white mb-4">
           Minhaj
         </h3>
 
-        <p class="leading-7 text-slate-400">
+        <p id="footerBrandText" class="leading-7 text-slate-400">
           AI-powered curriculum generation platform that creates
           slides, labs, assessments and complete learning materials
           in minutes.
@@ -329,7 +509,7 @@ const stageInterval = setInterval(() => {
 
       <!-- Team -->
       <div>
-        <h4 class="text-white font-semibold mb-4">
+        <h4 id="teamTitle" class="text-white font-semibold mb-4">
           Team contact
         </h4>
 
@@ -337,16 +517,18 @@ const stageInterval = setInterval(() => {
 
   <li>
     <a
+      id="nouraName"
       href="https://www.linkedin.com/in/norah-aljandol-a17843218"
       target="_blank"
       class="hover:text-white transition duration-300"
     >
-      Noura Aljandol
+      Norah Aljandol
     </a>
   </li>
 
   <li>
     <a
+      id="faiName"
       href="https://www.linkedin.com/in/faionayq/"
       target="_blank"
       class="hover:text-white transition duration-300"
@@ -357,6 +539,7 @@ const stageInterval = setInterval(() => {
 
   <li>
     <a
+      id="wajnName"
       href="https://www.linkedin.com/in/wajn-alqahtani/"
       target="_blank"
       class="hover:text-white transition duration-300"
@@ -371,16 +554,16 @@ const stageInterval = setInterval(() => {
     </div>
 
     <div class="border-t border-slate-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+      <div>
 
-    
-
-        <a href="https://github.com/noura05x/Minhaj.git"
+        <a id="gitlink"
+        href="https://github.com/noura05x/Minhaj.git"
            class="hover:text-white transition">
           GitHub
         </a>
       </div>
 
-      <p class="mt-4 md:mt-0 text-slate-500">
+      <p id="footerCopyright" class="mt-4 md:mt-0 text-slate-500">
         © 2026 Minhaj. Built with ♡ by Noura Aljandol - Fai Bin Onayq - Wajan Alqahtani
       </p>
 
