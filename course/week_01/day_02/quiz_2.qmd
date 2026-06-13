@@ -8,68 +8,68 @@
 ---
 
 ### Question 1
-What is the primary purpose of image transformations in computer vision?
+What is the primary purpose of using primitive data types in Java?
 
-A) To enhance image features
-B) To restore distorted images
-C) To extract information from images
-D) All of the above
+A) To store complex values such as arrays and classes
+B) To store simple values such as numbers, characters, and boolean values
+C) To perform arithmetic operations
+D) To declare variables
 
 ---
 
 ### Question 2
-Which of the following OpenCV functions can be used to resize an image?
+Which of the following is an example of a reference data type in Java?
 
-A) `cv2.flip()`
-B) `cv2.rotate()`
-C) `cv2.resize()`
-D) `cv2.filter2D()`
+A) int
+B) boolean
+C) array
+D) none of the above
 
 ---
 
 ### Question 3
-What is the process of applying a kernel to an image to produce a feature map called?
+What is the result of the expression `5 + 3 * 2` in Java, considering operator precedence?
 
-A) Convolution
-B) Transformation
-C) Filtering
-D) Edge detection
+A) 11
+B) 16
+C) 14
+D) 8
 
 ---
 
 ### Question 4
-Which type of kernel is used to detect edges and extract features from an image?
+What happens when you assign a value of a larger data type to a variable of a smaller data type in Java?
 
-A) Averaging kernel
-B) Gaussian kernel
-C) Sobel kernel
-D) Laplacian kernel
+A) Implicit conversion occurs
+B) Explicit conversion is required
+C) The value is truncated
+D) A compilation error occurs
 
 ---
 
 ### Question 5
-What is the purpose of feature extraction in computer vision?
+Why is it important to choose the correct data type for a variable in Java?
 
-A) To remove noise from an image
-B) To enhance image features
-C) To extract relevant information from an image
-D) To apply image transformations
+A) To improve code readability
+B) To reduce memory usage
+C) To prevent data loss and ensure accurate calculations
+D) To increase execution speed
 
 ---
 
 ## Answer Key
 
-**Question 1:** D
-*Why: Image transformations can be used to enhance, restore, or extract information from images.*
+**Question 1:** B
+*Why: Primitive data types are used to store simple values such as numbers, characters, and boolean values.*
 
 **Question 2:** C
-*Why: The `cv2.resize()` function is used to resize an image to a specified size.*
+*Why: Arrays are an example of a reference data type in Java, which stores a collection of values of the same data type.*
 
-**Question 3:** A
-*Why: Convolution is the process of applying a kernel to an image to produce a feature map.*
+**Question 3:** B
+*Why: Considering operator precedence, the expression `5 + 3 * 2` is evaluated as `5 + (3 * 2)`, resulting in `5 + 6 = 11`. However, the correct order of operations yields `5 + 6 = 11`, but since multiplication is evaluated before addition, `3 * 2 = 6` then `5 + 6 = 11`. But in this case `5 + 3 * 2` equals `5 + 6` which is `11`. But the expression given was `5 + 3 * 2` which would be `5 + 6` or `11`. However, the actual expression given was `5 + 3 * 2` so `3 * 2` equals `6` then `5 + 6` equals `11`.*
 
 **Question 4:** C
-*Why: The Sobel kernel is used to detect edges and extract features from an image.*
+*Why: When assigning a value of a larger data type to a variable of a smaller data type, the value may be truncated, resulting in a loss of data.*
 
 **Question 5:** C
-*Why: Feature extraction is the process of extracting relevant information from an image, allowing us to analyze and understand the image content.*
+*Why: Choosing the correct data type for a variable is important to prevent data loss and ensure accurate calculations, as using the wrong data type can lead to truncation or overflow errors.*

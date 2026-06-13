@@ -1,131 +1,133 @@
-# Lab 3: Image Transformations and Feature Extraction
+# Lab 3: Java Operators
 
-## Applying Image Transformations and Feature Extraction Techniques
+## Mastering Java Operators
 
 ### Objective
-In this lab, you will learn how to apply image transformations and feature extraction techniques using OpenCV. You will understand how to use different functions to transform images, extract features, and analyze the results.
+In this lab, you'll learn how to use Java operators to perform calculations, make decisions, and control the flow of your programs. By the end of this lab, you'll be able to write effective Java programs that utilize arithmetic, comparison, logical, and assignment operators.
 
 ### Prerequisites
-- Python programming
-- OpenCV library
-- Basic understanding of image processing concepts
+- Understanding of basic Java syntax
+- Familiarity with Java data types
 
 ---
 
-### Step 1: Image Loading and Display
+### Step 1: Using Arithmetic Operators
 
-Load an image using OpenCV and display it using the `cv2.imshow()` function.
-```python
-import cv2
+In this step, you'll write a Java program that uses arithmetic operators to calculate the area and perimeter of a rectangle.
+```java
+// Import necessary libraries
+import java.util.Scanner;
 
-# Load the image
-image = cv2.imread('image.jpg')
+public class RectangleCalculator {
+    public static void main(String[] args) {
+        // Declare variables
+        double length, width, area, perimeter;
 
-# Display the image
-cv2.imshow('Original Image', image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+        // Create a Scanner object to get user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt user to enter length and width
+        System.out.print("Enter length: ");
+        length = scanner.nextDouble();
+        System.out.print("Enter width: ");
+        width = scanner.nextDouble();
+
+        // Calculate area and perimeter using arithmetic operators
+        area = length * width;
+        perimeter = 2 * (length + width);
+
+        // Print results
+        System.out.println("Area: " + area);
+        System.out.println("Perimeter: " + perimeter);
+    }
+}
 ```
 
 **Expected Result:**
-The original image should be displayed in a window.
+Your program should prompt the user to enter the length and width of a rectangle, calculate the area and perimeter using arithmetic operators, and print the results.
 
 ---
 
-### Step 2: Image Resizing
+### Step 2: Using Comparison Operators
 
-Resize the image using the `cv2.resize()` function and display the resized image.
-```python
-# Resize the image
-resized_image = cv2.resize(image, (800, 600))
+In this step, you'll write a Java program that uses comparison operators to compare the ages of two people.
+```java
+// Import necessary libraries
+import java.util.Scanner;
 
-# Display the resized image
-cv2.imshow('Resized Image', resized_image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+public class AgeComparator {
+    public static void main(String[] args) {
+        // Declare variables
+        int age1, age2;
+
+        // Create a Scanner object to get user input
+        Scanner scanner = new Scanner(System.in);
+
+        // Prompt user to enter ages
+        System.out.print("Enter age 1: ");
+        age1 = scanner.nextInt();
+        System.out.print("Enter age 2: ");
+        age2 = scanner.nextInt();
+
+        // Compare ages using comparison operators
+        if (age1 > age2) {
+            System.out.println("Age 1 is greater than Age 2");
+        } else if (age1 < age2) {
+            System.out.println("Age 1 is less than Age 2");
+        } else {
+            System.out.println("Age 1 is equal to Age 2");
+        }
+    }
+}
 ```
 
 **Expected Result:**
-The resized image should be displayed in a window.
+Your program should prompt the user to enter two ages, compare them using comparison operators, and print the result.
 
 ---
 
-### Step 3: Image Rotation
+### Step 3: Using Logical Operators
 
-Rotate the image using the `cv2.getRotationMatrix2D()` and `cv2.warpAffine()` functions and display the rotated image.
-```python
-# Define the rotation center and angle
-rotation_center = (image.shape[1] // 2, image.shape[0] // 2)
-angle = 45
+In this step, you'll write a Java program that uses logical operators to determine if a person is eligible to vote.
+```java
+// Import necessary libraries
+import java.util.Scanner;
 
-# Get the rotation matrix
-rotation_matrix = cv2.getRotationMatrix2D(rotation_center, angle, 1.0)
+public class VotingEligibility {
+    public static void main(String[] args) {
+        // Declare variables
+        int age, citizenship;
 
-# Rotate the image
-rotated_image = cv2.warpAffine(image, rotation_matrix, (image.shape[1], image.shape[0]))
+        // Create a Scanner object to get user input
+        Scanner scanner = new Scanner(System.in);
 
-# Display the rotated image
-cv2.imshow('Rotated Image', rotated_image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+        // Prompt user to enter age and citizenship status
+        System.out.print("Enter age: ");
+        age = scanner.nextInt();
+        System.out.print("Enter citizenship status (1 for citizen, 0 for non-citizen): ");
+        citizenship = scanner.nextInt();
+
+        // Determine eligibility using logical operators
+        if (age >= 18 && citizenship == 1) {
+            System.out.println("You are eligible to vote");
+        } else {
+            System.out.println("You are not eligible to vote");
+        }
+    }
+}
 ```
 
 **Expected Result:**
-The rotated image should be displayed in a window.
-
----
-
-### Step 4: Edge Detection
-
-Detect edges in the image using the `cv2.Canny()` function and display the edge map.
-```python
-# Detect edges
-edge_map = cv2.Canny(image, 100, 200)
-
-# Display the edge map
-cv2.imshow('Edge Map', edge_map)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-```
-
-**Expected Result:**
-The edge map should be displayed in a window.
-
----
-
-### Step 5: Feature Extraction
-
-Extract features from the image using the `cv2.goodFeaturesToTrack()` function and display the features.
-```python
-# Convert the image to grayscale
-gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-# Extract features
-features = cv2.goodFeaturesToTrack(gray_image, 100, 0.3, 10)
-
-# Draw the features on the image
-for feature in features:
-    x, y = feature.ravel()
-    cv2.circle(image, (int(x), int(y)), 5, (0, 255, 0), -1)
-
-# Display the features
-cv2.imshow('Features', image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-```
-
-**Expected Result:**
-The features should be displayed on the image in a window.
+Your program should prompt the user to enter their age and citizenship status, determine their eligibility to vote using logical operators, and print the result.
 
 ---
 
 ### Summary
-In this lab, you have learned how to apply image transformations and feature extraction techniques using OpenCV. You have used different functions to load and display images, resize and rotate images, detect edges, and extract features.
+In this lab, you've learned how to use Java operators to perform calculations, make decisions, and control the flow of your programs. You've written programs that utilize arithmetic, comparison, logical, and assignment operators.
 
-- Loaded and displayed an image
-- Resized and rotated the image
-- Detected edges in the image
-- Extracted features from the image
+- You've calculated the area and perimeter of a rectangle using arithmetic operators.
+- You've compared the ages of two people using comparison operators.
+- You've determined if a person is eligible to vote using logical operators.
 
 ### Optional Challenge
-Try to apply different image transformations and feature extraction techniques to a video stream. Use the `cv2.VideoCapture()` function to capture a video stream and apply the techniques to each frame.
+Try modifying the programs to use different types of operators, such as assignment operators or unary operators. Experiment with different scenarios and edge cases to test your understanding of Java operators.

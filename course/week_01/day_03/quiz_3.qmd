@@ -8,68 +8,68 @@
 ---
 
 ### Question 1
-What is the primary purpose of applying image transformations in computer vision?
+What is the primary purpose of using parentheses in Java expressions?
 
-A) To enhance image quality
-B) To correct for camera distortions or normalize images
-C) To detect edges or lines in an image
-D) To recognize shapes or patterns in an image
+A) To group variables
+B) To clarify the order of operations
+C) To assign values to variables
+D) To compare values
 
 ---
 
 ### Question 2
-Which OpenCV function can be used to resize an image to a specific size or scale?
+Which type of operator is used to assign a value to a variable?
 
-A) `cv2.rotate()`
-B) `cv2.flip()`
-C) `cv2.resize()`
-D) `cv2.getStructuringElement()`
+A) Arithmetic operator
+B) Comparison operator
+C) Logical operator
+D) Assignment operator
 
 ---
 
 ### Question 3
-What is the process of applying a kernel to an image to extract features called?
+What is the result of the expression `5 > 3 && 2 < 4` in Java?
 
-A) Image transformation
-B) Feature extraction
-C) Convolution
-D) Object detection
+A) False
+B) True
+C) Error
+D) Null
 
 ---
 
 ### Question 4
-Which of the following techniques can be used to detect edges in an image?
+What is the difference between the `==` and `=` operators in Java?
 
-A) Template matching
-B) Hough transform
-C) Canny edge detector
-D) Gaussian blur
+A) `==` is used for assignment, while `=` is used for comparison
+B) `==` is used for comparison, while `=` is used for assignment
+C) `==` is used for arithmetic operations, while `=` is used for logical operations
+D) `==` is used for logical operations, while `=` is used for arithmetic operations
 
 ---
 
 ### Question 5
-What is the name of the OpenCV function that can be used to detect lines in an image?
+What is the purpose of the `!` operator in Java?
 
-A) `cv2.Canny()`
-B) `cv2.HoughLinesP()`
-C) `cv2.matchTemplate()`
-D) `cv2.convolve2D()`
+A) To perform arithmetic operations
+B) To compare values
+C) To assign values to variables
+D) To negate a condition
 
 ---
 
 ## Answer Key
 
 **Question 1:** B
-*Why: Image transformations are used to correct for camera distortions or normalize images, which is essential for many computer vision applications.*
+*Why: The primary purpose of using parentheses in Java expressions is to clarify the order of operations.*
 
-**Question 2:** C
-*Why: The `cv2.resize()` function is used to resize an image to a specific size or scale, which is a common operation in computer vision.*
+**Question 2:** D
+*Why: Assignment operators are used to assign values to variables in Java.*
 
-**Question 3:** C
-*Why: Convolution is the process of applying a kernel to an image to extract features, which is a fundamental concept in computer vision.*
+**Question 3:** B
+*Why: The expression `5 > 3 && 2 < 4` evaluates to True because both conditions are true.*
 
-**Question 4:** C
-*Why: The Canny edge detector is a technique used to detect edges in an image, which is a crucial step in many computer vision applications.*
+**Question 4:** B
+*Why: The `==` operator is used for comparison, while the `=` operator is used for assignment in Java.*
 
-**Question 5:** B
-*Why: The `cv2.HoughLinesP()` function is used to detect lines in an image, which is a common operation in computer vision.*
+**Question 5:** D
+*Why: The `!` operator is used to negate a condition in Java.*

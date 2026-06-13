@@ -1,113 +1,171 @@
-# Lab 4: Feature Extraction with OpenCV
+# Lab 4: Control Structures in Java
 
-## Extracting Meaningful Features from Images
+## Mastering Conditional Statements and Loops
 
 ### Objective
-In this lab, you'll learn how to extract meaningful features from images using OpenCV. You'll understand the importance of feature extraction in computer vision and practice implementing various techniques to extract features from images.
+In this lab, you will learn and practice using control structures in Java, including if-else statements, switch statements, for loops, while loops, and do-while loops. By the end of this lab, you will be able to write efficient and readable Java code that incorporates these control structures.
 
 ### Prerequisites
-- Basic understanding of Python programming
-- Familiarity with OpenCV library
-- Understanding of image transformations and kernel convolution
+- Basic understanding of Java syntax and data types
+- Familiarity with Java Development Kit (JDK) and a Java IDE
 
 ---
 
-### Step 1: Thresholding
+### Step 1: If-Else Statements
 
-Apply thresholding to an image to separate it into different regions based on pixel intensity.
-```python
-import cv2
-import numpy as np
+Create a new Java project in your preferred IDE and write a program that uses if-else statements to determine whether a given number is positive, negative, or zero.
+```java
+// Import necessary packages
+import java.util.Scanner;
 
-# Load the image
-image = cv2.imread('image.jpg')
+public class IfElseExample {
+    public static void main(String[] args) {
+        // Declare and initialize variables
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int number = scanner.nextInt();
+        scanner.close();
 
-# Convert the image to grayscale
-gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-# Apply thresholding
-_, thresh_image = cv2.threshold(gray_image, 127, 255, cv2.THRESH_BINARY)
-
-# Display the thresholded image
-cv2.imshow('Thresholded Image', thresh_image)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+        // Use if-else statements to determine the sign of the number
+        if (number > 0) {
+            System.out.println("The number is positive.");
+        } else if (number < 0) {
+            System.out.println("The number is negative.");
+        } else {
+            System.out.println("The number is zero.");
+        }
+    }
+}
 ```
 
 **Expected Result:**
-The thresholded image should display distinct regions based on pixel intensity.
+The program will prompt the user to enter a number and then print whether the number is positive, negative, or zero.
 
 ---
 
-### Step 2: Edge Detection
+### Step 2: Switch Statements
 
-Use the Canny edge detection algorithm to identify the boundaries between objects in an image.
-```python
-import cv2
-import numpy as np
+Modify the previous program to use a switch statement to determine the day of the week based on a given day number (1-7).
+```java
+// Import necessary packages
+import java.util.Scanner;
 
-# Load the image
-image = cv2.imread('image.jpg')
+public class SwitchExample {
+    public static void main(String[] args) {
+        // Declare and initialize variables
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a day number (1-7): ");
+        int dayNumber = scanner.nextInt();
+        scanner.close();
 
-# Convert the image to grayscale
-gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-# Apply Gaussian blur to reduce noise
-blurred_image = cv2.GaussianBlur(gray_image, (5, 5), 0)
-
-# Apply Canny edge detection
-edges = cv2.Canny(blurred_image, 50, 150)
-
-# Display the edges
-cv2.imshow('Edges', edges)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+        // Use a switch statement to determine the day of the week
+        switch (dayNumber) {
+            case 1:
+                System.out.println("Monday");
+                break;
+            case 2:
+                System.out.println("Tuesday");
+                break;
+            case 3:
+                System.out.println("Wednesday");
+                break;
+            case 4:
+                System.out.println("Thursday");
+                break;
+            case 5:
+                System.out.println("Friday");
+                break;
+            case 6:
+                System.out.println("Saturday");
+                break;
+            case 7:
+                System.out.println("Sunday");
+                break;
+            default:
+                System.out.println("Invalid day number");
+        }
+    }
+}
 ```
 
 **Expected Result:**
-The edges in the image should be clearly visible, indicating the boundaries between objects.
+The program will prompt the user to enter a day number and then print the corresponding day of the week.
 
 ---
 
-### Step 3: Feature Descriptors
+### Step 3: For Loops
 
-Use the SIFT feature descriptor to describe the local features of an image.
-```python
-import cv2
-import numpy as np
+Write a program that uses a for loop to print the numbers from 1 to 10.
+```java
+// Import necessary packages
 
-# Load the image
-image = cv2.imread('image.jpg')
-
-# Convert the image to grayscale
-gray_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-
-# Create a SIFT feature descriptor
-sift = cv2.SIFT_create()
-
-# Detect keypoints and compute descriptors
-keypoints, descriptors = sift.detectAndCompute(gray_image, None)
-
-# Draw the keypoints on the image
-image_with_keypoints = cv2.drawKeypoints(image, keypoints, None)
-
-# Display the image with keypoints
-cv2.imshow('Image with Keypoints', image_with_keypoints)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+public class ForLoopExample {
+    public static void main(String[] args) {
+        // Use a for loop to print the numbers from 1 to 10
+        for (int i = 1; i <= 10; i++) {
+            System.out.println(i);
+        }
+    }
+}
 ```
 
 **Expected Result:**
-The image should display keypoints, indicating the locations of interest in the image.
+The program will print the numbers from 1 to 10.
+
+---
+
+### Step 4: While Loops
+
+Modify the previous program to use a while loop to print the numbers from 1 to 10.
+```java
+// Import necessary packages
+
+public class WhileLoopExample {
+    public static void main(String[] args) {
+        // Declare and initialize variables
+        int i = 1;
+
+        // Use a while loop to print the numbers from 1 to 10
+        while (i <= 10) {
+            System.out.println(i);
+            i++;
+        }
+    }
+}
+```
+
+**Expected Result:**
+The program will print the numbers from 1 to 10.
+
+---
+
+### Step 5: Do-While Loops
+
+Write a program that uses a do-while loop to print the numbers from 1 to 10.
+```java
+// Import necessary packages
+
+public class DoWhileLoopExample {
+    public static void main(String[] args) {
+        // Declare and initialize variables
+        int i = 1;
+
+        // Use a do-while loop to print the numbers from 1 to 10
+        do {
+            System.out.println(i);
+            i++;
+        } while (i <= 10);
+    }
+}
+```
+
+**Expected Result:**
+The program will print the numbers from 1 to 10.
 
 ---
 
 ### Summary
-In this lab, you've learned how to extract meaningful features from images using OpenCV. You've practiced applying thresholding, edge detection, and feature descriptors to extract features from images. These techniques are essential in computer vision for object recognition, image classification, and scene understanding.
-
-- You've applied thresholding to separate an image into different regions based on pixel intensity.
-- You've used edge detection to identify the boundaries between objects in an image.
-- You've used feature descriptors to describe the local features of an image.
+In this lab, you learned and practiced using control structures in Java, including if-else statements, switch statements, for loops, while loops, and do-while loops. You wrote programs that demonstrated the use of these control structures to perform various tasks.
 
 ### Optional Challenge
-Try applying these feature extraction techniques to different images and observe the results. You can also experiment with other feature extraction techniques, such as histogram-based features and texture features, to see how they perform on various images.
+Write a program that uses control structures to simulate a simple game, such as a guessing game or a rock-paper-scissors game. Experiment with different control structures and logic to create a more complex and engaging game.

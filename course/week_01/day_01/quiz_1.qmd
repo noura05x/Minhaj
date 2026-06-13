@@ -8,68 +8,68 @@
 ---
 
 ### Question 1
-What is the primary goal of computer vision as a field of artificial intelligence?
+What is the primary characteristic of Java programming that allows programs to run on any device?
 
-A) To enable computers to process and analyze textual data
-B) To enable computers to interpret and understand visual information from the world
-C) To develop algorithms for audio processing
-D) To create autonomous vehicles without using visual data
+A) Object-oriented language
+B) Platform independence
+C) Large community of developers
+D) High-level language
 
 ---
 
 ### Question 2
-Which of the following is NOT a real-world application of computer vision?
+What is the purpose of the Java Development Kit (JDK) in Java programming?
 
-A) Medical diagnosis systems
-B) Surveillance systems
-C) Autonomous vehicles
-D) Developing operating systems
+A) To write Java code
+B) To compile and run Java programs
+C) To provide a runtime environment for Java programs
+D) To install the Java Virtual Machine (JVM)
 
 ---
 
 ### Question 3
-What is a crucial step in getting started with computer vision projects?
+What is the difference between the Java compiler and the Java Virtual Machine (JVM)?
 
-A) Installing OpenCV and NumPy libraries
-B) Learning advanced calculus
-C) Purchasing a high-end graphics card
-D) Mastering a programming language other than Python
+A) The compiler converts Java code into bytecode, while the JVM executes the bytecode
+B) The compiler executes the bytecode, while the JVM converts Java code into bytecode
+C) The compiler is used for debugging, while the JVM is used for testing
+D) The compiler is used for testing, while the JVM is used for debugging
 
 ---
 
 ### Question 4
-How can you display an image using OpenCV in Python?
+What is the purpose of using variables in Java programming?
 
-A) Using the `cv2.read()` function
-B) Using the `cv2.imshow()` function
-C) Using the `cv2.waitKey()` function
-D) Using the `cv2.destroyAllWindows()` function alone
+A) To store values
+B) To perform operations
+C) To declare data types
+D) To define operators
 
 ---
 
 ### Question 5
-What is an essential math concept for understanding computer vision?
+What is the benefit of following best practices in Java programming?
 
-A) Geometry
-B) Linear Algebra
-C) Trigonometry
-D) Only Probability and Statistics
+A) Improved code readability
+B) Increased code complexity
+C) Reduced code maintainability
+D) Decreased code reliability
 
 ---
 
 ## Answer Key
 
 **Question 1:** B
-*Why: Computer vision is defined as a field of artificial intelligence that enables computers to interpret and understand visual information from the world.*
+*Why: Java's platform independence allows programs to run on any device with a Java Virtual Machine (JVM) installed.*
 
-**Question 2:** D
-*Why: Developing operating systems is not listed as an application of computer vision in the provided context.*
+**Question 2:** B
+*Why: The JDK provides a compiler to compile Java programs and a runtime environment to execute the compiled programs.*
 
 **Question 3:** A
-*Why: Installing OpenCV and NumPy libraries is mentioned as a crucial step in getting started with computer vision projects.*
+*Why: The Java compiler converts Java code into bytecode, which is then executed by the Java Virtual Machine (JVM).*
 
-**Question 4:** B
-*Why: The `cv2.imshow()` function is used to display an image in OpenCV.*
+**Question 4:** A
+*Why: Variables are used to store values in Java programming, allowing for data manipulation and processing.*
 
-**Question 5:** B
-*Why: Linear Algebra is listed as one of the essential math concepts for understanding computer vision.*
+**Question 5:** A
+*Why: Following best practices in Java programming improves code readability, making it easier to understand and maintain.*

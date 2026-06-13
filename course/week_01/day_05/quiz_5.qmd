@@ -8,68 +8,68 @@
 ---
 
 ### Question 1
-What is the primary purpose of image filtering in computer vision?
+What is the primary purpose of control structures in Java programming?
 
-A) To remove noise from an image
-B) To enhance image features
-C) To detect objects in an image
-D) To recognize faces in an image
+A) To improve code readability
+B) To control the flow of a program's execution
+C) To handle exceptions and errors
+D) To optimize program performance
 
 ---
 
 ### Question 2
-Which of the following image transformations preserves straight lines and ratios?
+Which of the following is a characteristic of if-else statements in Java?
 
-A) Perspective transformation
-B) Affine transformation
-C) Image warping
-D) Rotation
+A) They can only be used with boolean conditions
+B) They consist of an if clause and a required else clause
+C) They allow the program to execute different blocks of code depending on a condition
+D) They can only be nested up to two levels deep
 
 ---
 
 ### Question 3
-What is the role of a kernel in image processing?
+What is the main difference between a for loop and a while loop in Java?
 
-A) To apply a filter to an image
-B) To extract features from an image
-C) To perform a dot product at each position in an image
-D) To transform an image into a new coordinate system
+A) A for loop is used for iterating over arrays, while a while loop is used for iterating over collections
+B) A for loop is used for repeating a block of code for a fixed number of times, while a while loop is used for repeating a block of code while a condition is true
+C) A for loop is faster than a while loop
+D) A for loop is more readable than a while loop
 
 ---
 
 ### Question 4
-Which of the following techniques is used to separate objects from the background in an image?
+What is the purpose of the break statement in a loop?
 
-A) Edge detection
-B) Thresholding
-C) Image segmentation
-D) Object recognition
+A) To skip the current iteration and move to the next one
+B) To exit the loop immediately
+C) To repeat the current iteration
+D) To continue to the next statement after the loop
 
 ---
 
 ### Question 5
-What is the primary application of convolutional neural networks (CNNs) in computer vision?
+Why is it important to follow best practices when using control structures in Java?
 
-A) Image classification
-B) Object detection
-C) Image segmentation
-D) All of the above
+A) To improve program performance
+B) To reduce the risk of errors and improve code maintainability
+C) To make the code more complex and challenging to debug
+D) To ignore standard coding conventions
 
 ---
 
 ## Answer Key
 
-**Question 1:** A
-*Why: Image filtering is used to remove noise from an image, which is a crucial step in image processing.*
+**Question 1:** B
+*Why: Control structures are used to control the flow of a program's execution, determining the order in which the program's code is executed.*
 
-**Question 2:** B
-*Why: Affine transformation preserves straight lines and ratios, which is essential in computer vision for tasks such as image alignment and comparison.*
+**Question 2:** C
+*Why: If-else statements allow the program to execute different blocks of code depending on a condition, making them a fundamental part of creating interactive and dynamic programs.*
 
-**Question 3:** C
-*Why: A kernel performs a dot product at each position in an image, generating a feature map that is used in image processing tasks such as filtering and feature extraction.*
+**Question 3:** B
+*Why: The main difference between a for loop and a while loop is that a for loop is used for repeating a block of code for a fixed number of times, while a while loop is used for repeating a block of code while a condition is true.*
 
 **Question 4:** B
-*Why: Thresholding is a technique used to separate objects from the background in an image, which is a critical step in image segmentation and object recognition.*
+*Why: The break statement is used to exit the loop immediately, allowing the program to terminate the loop and move on to the next statement.*
 
-**Question 5:** D
-*Why: Convolutional neural networks (CNNs) have a wide range of applications in computer vision, including image classification, object detection, and image segmentation, making them a fundamental tool in the field.*
+**Question 5:** B
+*Why: Following best practices when using control structures is important to reduce the risk of errors and improve code maintainability, making it easier to debug and modify the code.*

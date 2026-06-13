@@ -137,22 +137,12 @@
 <div id="progressContainer" class="hidden mt-8">
     
     <div class="flex justify-between text-sm text-slate-600 mb-2">
-        <span>Estimated Generation Time</span>
-        <span id="progressPercent">0%</span>
-    </div>
-
-    <div class="w-full bg-slate-200 rounded-full h-3">
-        <div
-            id="progressBar"
-            class="bg-[#142B7A] h-3 rounded-full transition-all duration-500"
-            style="width:0%">
-        </div>
+        <span>Generation Progress</span>
     </div>
 
     <p id="progressText"
        class="text-center text-sm text-slate-500 mt-2">
     </p>
-
 </div>
 
 <button
@@ -219,13 +209,47 @@ async function generateCurriculum() {
 `;
     await new Promise(resolve => setTimeout(resolve, 100));
 
+const progressContainer =
+document.getElementById("progressContainer");
 
 
+const progressText =
+document.getElementById("progressText");
+
+progressContainer.classList.remove("hidden");
+
+const stages = [
+    " Researching topic...",
+    " Generating course structure...",
+    " Creating slides...",
+    " Building labs...",
+    " Generating assessments...",
+    " Packaging curriculum..."
+];
+
+let stageIndex = 0;
+
+progressText.textContent = stages[0];
+
+const stageInterval = setInterval(() => {
+
+    stageIndex++;
+
+    if (stageIndex < stages.length) {
+
+        progressText.textContent =
+        stages[stageIndex];
+
+    }
+
+}, 8000);
     try {
+
         const response = await fetch("/generate", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data)
+            
         });
 
         if (!response.ok) throw new Error('Network response was not ok');
@@ -243,23 +267,43 @@ async function generateCurriculum() {
 
         // Clean up object URL
         window.URL.revokeObjectURL(url);
+        clearInterval(stageInterval);
+        progressText.textContent = " Curriculum Package Ready!";
 
-        document.getElementById("status").textContent = " ✔ Curriculum ZIP is downloaded!";
+        document.getElementById("status").textContent = " ✔ Curriculum ZIP is downloaded successfully!";
 
 
     } catch (error) {
+      clearInterval(stageInterval);
         document.getElementById("status").textContent = " x Generation failed. Please try again.";
         console.error("Generation error:", error);
     }
     finally {
-        // RE-ENABLE BUTTON after completion
-        button.disabled = false;
-        button.classList.remove('opacity-50', 'cursor-not-allowed');
-        button.textContent = 'Generate Curriculum ZIP';
+
+        setTimeout(() => {
+
+        progressContainer.classList.add("hidden");
+
+        progressText.textContent = "";
+
+    }, 4000);
+
+    button.disabled = false;
+
+    button.classList.remove(
+
+        'opacity-50',
+
+        'cursor-not-allowed'
+
+    );
+
+    button.textContent =
+
+    'Generate Curriculum ZIP';
     }
 }
 
-// Theme toggle persistence
 
 </script>
 <footer class="py-8 text-center text-sm text-slate-600">

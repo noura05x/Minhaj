@@ -8,68 +8,68 @@
 ---
 
 ### Question 1
-What is the primary purpose of feature extraction in computer vision?
+What is the primary purpose of control structures in Java programming?
 
-A) To reduce the dimensionality of image data
-B) To increase the complexity of image data
-C) To improve the resolution of images
-D) To change the format of images
+A) To simplify code and improve readability
+B) To increase the complexity of code
+C) To reduce the number of lines of code
+D) To ignore user input
 
 ---
 
 ### Question 2
-Which of the following feature extraction techniques involves separating an image into different regions based on pixel intensity?
+Which type of loop is commonly used to iterate over arrays or collections in Java?
 
-A) Edge detection
-B) Thresholding
-C) Feature descriptors
-D) Image transformations
+A) While loop
+B) Do-while loop
+C) For loop
+D) If-else statement
 
 ---
 
 ### Question 3
-What is the role of OpenCV functions, such as `cv2.threshold()` and `cv2.Canny()`, in feature extraction?
+What is the difference between a simple if statement and an if-else statement in Java?
 
-A) To extract global features from images
-B) To extract local features from images
-C) To apply thresholding and edge detection techniques
-D) To improve the resolution of images
+A) A simple if statement executes a block of code if a condition is true, while an if-else statement executes a block of code if a condition is false
+B) A simple if statement executes a block of code if a condition is true, while an if-else statement executes one block of code if a condition is true and another block if the condition is false
+C) A simple if statement executes a block of code if a condition is false, while an if-else statement executes a block of code if a condition is true
+D) A simple if statement and an if-else statement are the same
 
 ---
 
 ### Question 4
-How do variations in lighting, pose, and occlusion affect feature extraction in computer vision?
+What is the purpose of the switch statement in Java?
 
-A) They improve the accuracy and robustness of feature extraction
-B) They have no impact on feature extraction
-C) They reduce the complexity of image data
-D) They affect the accuracy and robustness of feature extraction
+A) To execute a block of code for a specified number of times
+B) To make decisions based on conditions or decisions
+C) To execute different blocks of code based on the value of a variable or expression
+D) To ignore user input
 
 ---
 
 ### Question 5
-What is the expected outcome of ongoing research in deep learning and convolutional neural networks for feature extraction in computer vision?
+What is the primary benefit of using control structures in Java programming?
 
-A) Reduced accuracy and robustness of computer vision systems
-B) Improved accuracy and robustness of computer vision systems
-C) Increased complexity of image data
-D) Decreased importance of feature extraction in computer vision
+A) To increase the complexity of code
+B) To reduce the number of lines of code
+C) To simplify code and improve readability
+D) To ignore user input
 
 ---
 
 ## Answer Key
 
 **Question 1:** A
-*Why: The primary purpose of feature extraction is to reduce the dimensionality of image data while preserving the most important features.*
+*Why: Control structures are used to control the flow of a program's execution and determine which parts of the code to execute, when to execute them, and how many times to execute them. They can be used to simplify code and improve readability.*
 
-**Question 2:** B
-*Why: Thresholding involves separating an image into different regions based on pixel intensity.*
+**Question 2:** C
+*Why: For loops are commonly used to iterate over arrays or collections in Java. They consist of an initialization statement, a condition statement, and an increment statement.*
 
-**Question 3:** C
-*Why: OpenCV functions, such as `cv2.threshold()` and `cv2.Canny()`, are used to apply thresholding and edge detection techniques in feature extraction.*
+**Question 3:** B
+*Why: A simple if statement executes a block of code if a condition is true, while an if-else statement executes one block of code if a condition is true and another block if the condition is false.*
 
-**Question 4:** D
-*Why: Variations in lighting, pose, and occlusion can affect the accuracy and robustness of feature extraction in computer vision.*
+**Question 4:** C
+*Why: The switch statement is used to execute different blocks of code based on the value of a variable or expression. It is similar to an if-else statement but is more concise and efficient when dealing with multiple conditions.*
 
-**Question 5:** B
-*Why: Ongoing research in deep learning and convolutional neural networks is expected to improve the accuracy and robustness of computer vision systems.*
+**Question 5:** C
+*Why: The primary benefit of using control structures in Java programming is to simplify code and improve readability. Control structures can be used to make decisions, repeat tasks, and handle errors, making the code more efficient and maintainable.*
